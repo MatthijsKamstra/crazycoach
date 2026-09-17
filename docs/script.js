@@ -1,5 +1,5 @@
 const toggle = document.getElementById('modeToggle');
-const body   = document.body;
+const body = document.body;
 
 function applyMode(mode) {
   const attr = mode === 'business' ? 'data-business' : 'data-crazy';
@@ -28,13 +28,13 @@ const form = document.querySelector('.contact-form');
 if (form) {
   form.addEventListener('submit', e => {
     e.preventDefault();
-    const btn  = form.querySelector('.btn-submit');
+    const btn = form.querySelector('.btn-submit');
     const orig = btn.textContent;
     btn.textContent = 'Verstuurd ✓';
-    btn.disabled    = true;
+    btn.disabled = true;
     setTimeout(() => {
       btn.textContent = orig;
-      btn.disabled    = false;
+      btn.disabled = false;
       form.reset();
     }, 2200);
   });
