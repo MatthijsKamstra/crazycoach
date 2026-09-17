@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crazy Coach — Warmte. Humor. Uitdaging.</title>
+  <meta name="description" content="Provocatieve coaching voor mensen die weten wat ze willen maar het niet doen. Warmte, humor en uitdaging." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,800;0,900;1,400&family=Permanent+Marker&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="theme-crazy">
+
+  <!-- TOPBAR -->
+  <header class="topbar" id="home">
+    <div class="container-fluid px-3 px-md-4">
+      <div class="row align-items-center gx-3">
+        <div class="col-auto">
+          <a href="#home" class="brand" aria-label="Crazy Coach">CRAZY COACH</a>
+        </div>
+        <nav class="col d-none d-xl-flex nav-links" aria-label="Navigatie">
+          <a href="#wat-is-dit" data-crazy="Wat is dit?" data-business="Wat is dit?">Wat is dit?</a>
+          <a href="#voor-wie" data-crazy="Voor wie?" data-business="Voor wie?">Voor wie?</a>
+          <a href="#coaching" data-crazy="Coaching" data-business="Coaching">Coaching</a>
+          <a href="#resultaten" data-crazy="Resultaten" data-business="Resultaten">Resultaten</a>
+          <a href="#faq" data-crazy="FAQ" data-business="FAQ">FAQ</a>
+          <a href="#contact" data-crazy="Contact" data-business="Contact">Contact</a>
+        </nav>
+        <div class="col-auto ms-auto">
+          <button class="mode-toggle" id="modeToggle" type="button" aria-label="Wissel stijl">
+            <span class="mode-crazy active">🦄 CRAZY</span>
+            <span class="sep">/</span>
+            <span class="mode-business">BUSINESS</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="row align-items-center g-4 g-xl-5">
+
+          <div class="col-lg-6 hero-copy">
+            <p class="eyebrow" data-crazy="JE BENT NIET GEK." data-business="Je bent niet gek.">JE BENT NIET GEK.</p>
+            <h1 data-crazy="JE BENT GEWOON NOG NIET KLAAR." data-business="Je bent gewoon nog niet klaar.">JE BENT GEWOON NOG NIET KLAAR.</h1>
+            <p class="hero-lead">Coaching voor mensen die diep van binnen weten wat ze willen.<br>Maar het ondertussen tóch al een tijdje niet doen.</p>
+            <div class="hero-cta">
+              <a href="#contact" class="btn-main" data-crazy="JA FUCK IT — PLAN EEN GESPREK" data-business="Plan een gesprek">JA FUCK IT — PLAN EEN GESPREK</a>
+              <a href="#wat-is-dit" class="btn-ghost" data-crazy="WAT IS DIT EIGENLIJK?" data-business="Wat is provocatieve coaching?">WAT IS DIT EIGENLIJK?</a>
+            </div>
+            <div class="hero-routes">
+              <a href="#contact" class="route-pill">Ik zit vast</a>
+              <a href="#contact" class="route-pill">Ik wil veranderen</a>
+              <a href="#contact" class="route-pill">Ik wil weten wat hier aan de hand is</a>
+            </div>
+          </div>
+
+          <div class="col-lg-6 hero-img-wrap">
+            <img src="../screenshots/punk.png" alt="Crazy Coach — de provocatieve unicorn" class="hero-img" />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EVEN SERIEUS -->
+    <section class="section-intro">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="prose-box">
+              <h2 data-crazy="EVEN SERIEUS." data-business="Even serieus.">EVEN SERIEUS.</h2>
+              <p>Je hebt erover nagedacht. Veel. Misschien té veel.</p>
+              <p>Je weet wat er anders moet. Je hebt podcasts geluisterd, boeken gelezen, lijstjes gemaakt, goede voornemens gehad en waarschijnlijk minstens één keer tegen jezelf gezegd:</p>
+              <blockquote>"Vanaf maandag ga ik het echt anders doen."</blockquote>
+              <p>En toen werd het dinsdag.</p>
+              <p><strong>Herkenbaar? Mooi. Dan hebben we iets om mee te werken.</strong></p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="prose-box prose-box--accent">
+              <h2 data-crazy="GEEN BRAAF COACHINGSGESPREK." data-business="Geen braaf coachingsgesprek.">GEEN BRAAF COACHINGSGESPREK.</h2>
+              <p>Ik ga niet tegenover je zitten met een notitieblok en na iedere zin zeggen: "En wat doet dat met je?"</p>
+              <p>Ik luister wel. Ik neem je serieus. Maar ik neem niet automatisch alles serieus wat jij over jezelf vertelt. Dat is nogal een verschil.</p>
+              <p>Ik gebruik humor, scherpte en provocatie om patronen zichtbaar te maken. Niet om jou onderuit te halen. Wel om datgene wat jou tegenhoudt eens flink door elkaar te schudden.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPERKRACHTEN -->
+    <section class="section-krachten">
+      <div class="container">
+        <p class="section-eyebrow" data-crazy="MIJN DRIE SUPERKRACHTEN" data-business="Werkwijze">MIJN DRIE SUPERKRACHTEN</p>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="kracht-card kracht-card--warmte">
+              <div class="kracht-icon">❤️</div>
+              <h3>WARMTE</h3>
+              <p>Je hoeft bij mij niets te bewijzen. Ik ben vóór jou. Ook als ik je ondertussen genadeloos wijs op de onzin die je jezelf vertelt.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="kracht-card kracht-card--humor">
+              <div class="kracht-icon">😂</div>
+              <h3>HUMOR</h3>
+              <p>Sommige problemen worden niet kleiner door er nóg serieuzer naar te kijken. Soms moet je er eerst eens om kunnen lachen.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="kracht-card kracht-card--uitdaging">
+              <div class="kracht-icon">⚡</div>
+              <h3>UITDAGING</h3>
+              <p>Je kunt heel lang praten over verandering. Maar uiteindelijk moet er iets gebeuren. Daar kom ik om de hoek kijken.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IS DIT JOU? -->
+    <section class="section-jou">
+      <div class="container">
+        <h2 class="jou-title" data-crazy="MISSCHIEN IS DIT WEL JOU." data-business="Herken je dit?">MISSCHIEN IS DIT WEL JOU.</h2>
+        <div class="jou-grid">
+          <div class="jou-item">
+            <p class="jou-statement">"Ik weet precies wat ik moet doen."</p>
+            <p class="jou-reply">Doe je het?</p>
+          </div>
+          <div class="jou-item">
+            <p class="jou-statement">"Ik wil eigenlijk iets anders."</p>
+            <p class="jou-reply">Waarom doe je dat dan niet?</p>
+          </div>
+          <div class="jou-item">
+            <p class="jou-statement">"Ik blijf maar twijfelen."</p>
+            <p class="jou-reply">Waar wacht je precies op?</p>
+          </div>
+          <div class="jou-item">
+            <p class="jou-statement">"Ik heb alles al geprobeerd."</p>
+            <p class="jou-reply">Echt alles?</p>
+          </div>
+          <div class="jou-item">
+            <p class="jou-statement">"Ik heb gewoon iemand nodig die me wakker schudt."</p>
+            <p class="jou-reply">Hallo.</p>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="#contact" class="btn-main" data-crazy="IK WIL KENNISMAKEN" data-business="Neem contact op">IK WIL KENNISMAKEN</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WAT IS PROVOCATIEF COACHEN? -->
+    <section id="wat-is-dit" class="section-wat">
+      <div class="container">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-7">
+            <p class="section-eyebrow" data-crazy="WAT IS DIT?" data-business="Methodiek">WAT IS DIT?</p>
+            <h2 class="section-title" data-crazy="PROVOCATIEF? JA. GEMEEN? NEE." data-business="Provocatieve coaching">PROVOCATIEF? JA. GEMEEN? NEE.</h2>
+            <p class="lead-text">Provocatief coachen is een manier van coachen waarbij ik je niet alleen vragen stel, maar je ook bewust uitdaag. Met humor, warmte, overdrijving en onverwachte perspectieven.</p>
+            <p class="body-text">Soms met een uitspraak waarvan je denkt: "Zegt ze dit nou echt?" Ja. Maar altijd met een reden.</p>
+
+            <div class="provoceer-box">
+              <h3 data-crazy="IK PROVOCEER JOU NIET. IK PROVOCEER JE VERHAAL." data-business="Ik provoceer je verhaal, niet jou.">IK PROVOCEER JOU NIET. IK PROVOCEER JE VERHAAL.</h3>
+              <p>Ik ben niet tegen jou. Ik ben juist vóór jou. Maar dat betekent niet dat ik alles geloof wat je over jezelf zegt.</p>
+              <p>Je bent niet je probleem. Je bent niet je angst. Je bent niet je uitstelgedrag. En je bent al helemaal niet verplicht om de rest van je leven hetzelfde verhaal te blijven vertellen.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="cocktail-card">
+              <h3 data-crazy="DE CRAZY COCKTAIL" data-business="De methode">DE CRAZY COCKTAIL</h3>
+              <div class="cocktail-item">
+                <strong>Warmte</strong>
+                <p>Er is vertrouwen. Ik ben betrokken. Ik wil dat het goed met je gaat.</p>
+              </div>
+              <div class="cocktail-item">
+                <strong>Humor</strong>
+                <p>We mogen lachen. Ook om moeilijke dingen. Humor geeft afstand en ruimte voor een ander perspectief.</p>
+              </div>
+              <div class="cocktail-item">
+                <strong>Uitdaging</strong>
+                <p>Want inzicht is leuk. Beweging is leuker.</p>
+              </div>
+              <div class="cocktail-item last">
+                <strong>Overdrijving &amp; absurditeit</strong>
+                <p>Soms moet je iets uitvergroten tot het vanzelf belachelijk wordt.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VOOR WIE? -->
+    <section id="voor-wie" class="section-wie">
+      <div class="container">
+        <p class="section-eyebrow" data-crazy="VOOR WIE?" data-business="Voor wie?">VOOR WIE?</p>
+        <h2 class="section-title" data-crazy="VOOR MENSEN DIE KLAAR ZIJN MET HUN EIGEN GEDOE." data-business="Voor mensen die klaar zijn met hun eigen patronen.">VOOR MENSEN DIE KLAAR ZIJN MET HUN EIGEN GEDOE.</h2>
+        <div class="row g-4 mt-2">
+          <div class="col-md-6 col-xl-3">
+            <article class="wie-card">
+              <h4>Ik zit vast</h4>
+              <p>Je weet dat je iets wilt veranderen, weet misschien zelfs precies wat. Maar iedere keer kom je weer op hetzelfde punt uit. Je denkt. Je twijfelt. Je analyseert. Je stelt uit.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <article class="wie-card">
+              <h4>Ik weet wat ik moet doen</h4>
+              <p>Je hebt geen nieuwe informatie nodig. Geen nieuw boek. Geen nieuwe podcast. Je moet iets dóén. En daar kunnen we het over hebben.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <article class="wie-card">
+              <h4>Ik wil iets anders</h4>
+              <p>Een andere baan. Meer lef. Een keuze maken. Een grens trekken. Of gewoon eindelijk eens ophouden met doen alsof alles prima gaat.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <article class="wie-card">
+              <h4>Ik ben mijn eigen probleem</h4>
+              <p>Perfectionistisch. Wacht op het perfecte moment. Zegt ja terwijl ze nee bedoelt. Nieuwsflits: dat moment bestaat waarschijnlijk niet.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="niet-card mt-4">
+          <p class="niet-label" data-crazy="NIET VOOR IEDEREEN" data-business="Niet voor iedereen">NIET VOOR IEDEREEN</p>
+          <p>Crazy Coach is niets voor je als je iemand zoekt die zegt: "Wat vervelend voor je." en vervolgens een kopje thee inschenkt. Ik ga je uitdagen. Als je daar niet tegen kunt, zijn er gelukkig heel veel andere coaches.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COACHING AANBOD -->
+    <section id="coaching" class="section-coaching">
+      <div class="container">
+        <p class="section-eyebrow" data-crazy="COACHING" data-business="Aanbod">COACHING</p>
+        <h2 class="section-title" data-crazy="KIES JE LEVEL OF CHAOS." data-business="Kies wat bij je past.">KIES JE LEVEL OF CHAOS.</h2>
+        <div class="row g-4 mt-2">
+          <div class="col-md-4">
+            <article class="offer-card">
+              <h3 data-crazy="DE SCHOP ONDER JE KONT" data-business="1-op-1 coaching">DE SCHOP ONDER JE KONT</h3>
+              <p class="offer-meta">1-op-1 · 90 minuten</p>
+              <p>Voor als je ergens tegenaan loopt en er niet alleen uitkomt. We kijken naar wat er speelt, wat je denkt, wat je doet en — bovenal — waarom je blijft doen wat je doet terwijl je zegt dat je het anders wilt.</p>
+              <a href="#contact" class="offer-cta" data-crazy="IK WIL DIT" data-business="Plan een kennismaking">IK WIL DIT</a>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="offer-card offer-card--featured">
+              <span class="offer-badge" data-crazy="POPULAIR" data-business="Populair">POPULAIR</span>
+              <h3 data-crazy="VAN WTF NAAR WTF?!" data-business="Crazy Coach traject">VAN WTF NAAR WTF?!</h3>
+              <p class="offer-meta">Traject · 6 sessies</p>
+              <p>Eén gesprek is soms niet genoeg. We gaan onderzoeken, uitdagen, experimenteren, lachen. En vooral: bewegen. Want inzicht is leuk, maar beweging is leuker.</p>
+              <a href="#contact" class="offer-cta" data-crazy="IK BEN ER KLAAR VOOR" data-business="Bekijk het traject">IK BEN ER KLAAR VOOR</a>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="offer-card">
+              <h3 data-crazy="STOP MET VERGADEREN" data-business="Voor teams &amp; organisaties">STOP MET VERGADEREN</h3>
+              <p class="offer-meta">Teams &amp; organisaties</p>
+              <p>Ook organisaties zitten vast. In vergaderingen, patronen en gedoe. In "zo doen we dat hier nu eenmaal". Ik help teams om eens anders naar hun situatie te kijken. Met humor, scherpte en genoeg veiligheid om iets te kunnen zeggen.</p>
+              <a href="#contact" class="offer-cta" data-crazy="IK WIL DIT BESPREKEN" data-business="Neem contact op">IK WIL DIT BESPREKEN</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTATEN -->
+    <section id="resultaten" class="section-resultaten">
+      <div class="container">
+        <p class="section-eyebrow" data-crazy="RESULTATEN" data-business="Resultaten">RESULTATEN</p>
+        <h2 class="section-title" data-crazy='VAN "IK WACHT WEL EVEN" NAAR "FUCK IT".' data-business="Wat het oplevert.">VAN "IK WACHT WEL EVEN" NAAR "FUCK IT".</h2>
+
+        <div class="ba-table mt-4">
+          <div class="ba-row">
+            <div class="ba-cell ba-before">
+              <span class="ba-tag">VOOR</span>
+              <p>"Ik moet eerst zeker weten dat dit de juiste keuze is."</p>
+            </div>
+            <div class="ba-arrow" aria-hidden="true">→</div>
+            <div class="ba-cell ba-after">
+              <span class="ba-tag">NA</span>
+              <p>"Ik kan een keuze maken en daarna kijken wat er gebeurt."</p>
+            </div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-cell ba-before">
+              <span class="ba-tag">VOOR</span>
+              <p>"Ik ben nu eenmaal perfectionistisch."</p>
+            </div>
+            <div class="ba-arrow" aria-hidden="true">→</div>
+            <div class="ba-cell ba-after">
+              <span class="ba-tag">NA</span>
+              <p>"Misschien gebruik ik perfectionisme soms als excuus om niet te beginnen."</p>
+            </div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-cell ba-before">
+              <span class="ba-tag">VOOR</span>
+              <p>"Ik weet niet wat ik wil."</p>
+            </div>
+            <div class="ba-arrow" aria-hidden="true">→</div>
+            <div class="ba-cell ba-after">
+              <span class="ba-tag">NA</span>
+              <p>"Ik weet eigenlijk best wat ik wil. Ik vind alleen de consequenties spannend."</p>
+            </div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-cell ba-before">
+              <span class="ba-tag">VOOR</span>
+              <p>37 openstaande tabbladen.</p>
+            </div>
+            <div class="ba-arrow" aria-hidden="true">→</div>
+            <div class="ba-cell ba-after">
+              <span class="ba-tag">NA</span>
+              <p>1 concrete actie.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-4">
+          <div class="col-md-4">
+            <blockquote class="testi">
+              <p>"Ze zegt precies wat je niet wilt horen, en dat is precies waarom het werkt."</p>
+              <footer>— Lisa, ondernemer</footer>
+            </blockquote>
+          </div>
+          <div class="col-md-4">
+            <blockquote class="testi">
+              <p>"Na één sessie had ik meer inzicht dan in 10 jaar therapie. Thanks Crazy Coach!"</p>
+              <footer>— Mark, creatieveling</footer>
+            </blockquote>
+          </div>
+          <div class="col-md-4">
+            <blockquote class="testi">
+              <p>"Ze heeft me niet gered. Ze heeft me wakker geschud. Game changer."</p>
+              <footer>— Samantha, manager</footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DE UNICORN -->
+    <section class="section-unicorn">
+      <div class="container">
+        <div class="unicorn-inner">
+          <h2 data-crazy="WAAROM EEN FUCKING UNICORN?" data-business="Waarom een unicorn?">WAAROM EEN FUCKING UNICORN?</h2>
+          <div class="row g-4 mt-2">
+            <div class="col-md-6">
+              <p>Een unicorn is absurd. Onwaarschijnlijk. Een beetje overdreven. En toch bestaat-ie.</p>
+              <p>Misschien hoef je jezelf niet realistischer te maken. Misschien moet je jezelf eens wat minder normaal maken.</p>
+            </div>
+            <div class="col-md-6">
+              <p>Normal is boring. Een unicorn is kleurrijk, volledig zichzelf en trekt zich niks aan van wat anderen normaal vinden.</p>
+              <p>Dat lijkt me een prima levenshouding.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section-faq">
+      <div class="container">
+        <p class="section-eyebrow" data-crazy="FAQ" data-business="Veelgestelde vragen">FAQ</p>
+        <h2 class="section-title" data-crazy="DINGEN DIE JE AFVRAAGT." data-business="Veelgestelde vragen.">DINGEN DIE JE AFVRAAGT.</h2>
+        <div class="accordion faq-acc mt-4" id="faqAcc">
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#f1">
+                Is provocatief coachen hetzelfde als iemand afzeiken?
+              </button>
+            </h3>
+            <div id="f1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc">
+              <div class="accordion-body">Nee. De basis van provocatief coachen is juist warmte en betrokkenheid. Ik neem jou serieus. Ik neem alleen niet automatisch elk verhaal dat je over jezelf vertelt serieus.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f2">
+                Ga je mij voor schut zetten?
+              </button>
+            </h3>
+            <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+              <div class="accordion-body">Hopelijk niet. Provocatie hoort binnen een veilige coachrelatie en vraagt om afstemming. Ik kan je uitdagen, je plagen, je op het verkeerde been zetten — maar ik laat je niet vallen.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f3">
+                Wat als ik niet van humor houd?
+              </button>
+            </h3>
+            <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+              <div class="accordion-body">Dan wordt het interessant. Humor is een middel, geen verplicht programmaonderdeel. We kijken naar wat je nodig hebt.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f4">
+                Wat als ik emotioneel word?
+              </button>
+            </h3>
+            <div id="f4" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+              <div class="accordion-body">Dan stoppen we met grappig doen. Er is ruimte voor alles wat er is. Warmte komt vóór de grap.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f5">
+                Is dit therapie?
+              </button>
+            </h3>
+            <div id="f5" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+              <div class="accordion-body">Nee. Dit is coaching, geen psychologische behandeling of therapie. Er is een duidelijk verschil in doel, methode en scope.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f6">
+                Hoeveel sessies heb ik nodig?
+              </button>
+            </h3>
+            <div id="f6" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+              <div class="accordion-body">Geen idee. En dat is een serieus antwoord. Dat hangt af van je vraag, je doel en wat je nodig hebt. We kunnen daar tijdens de kennismaking eerlijk naar kijken.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section-contact">
+      <div class="container">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-5">
+            <p class="section-eyebrow" data-crazy="CONTACT" data-business="Contact">CONTACT</p>
+            <h2 class="section-title" data-crazy="OKÉ. ZULLEN WE DAN?" data-business="Zullen we kennismaken?">OKÉ. ZULLEN WE DAN?</h2>
+            <p class="contact-lead">Je hoeft nog niets te weten. Je hoeft geen perfecte coachvraag te hebben. Vertel gewoon waar je tegenaan loopt.</p>
+            <p class="contact-promise" data-crazy="Ik beloof dat ik niet meteen een funnel over je heen gooi." data-business="Ik beloof dat ik niet meteen een funnel over je heen gooi.">Ik beloof dat ik niet meteen een funnel over je heen gooi.</p>
+          </div>
+          <div class="col-lg-7">
+            <form class="contact-form" novalidate>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="cNaam" class="form-label">Naam</label>
+                  <input id="cNaam" type="text" class="form-control" autocomplete="name" />
+                </div>
+                <div class="col-sm-6">
+                  <label for="cEmail" class="form-label">E-mail</label>
+                  <input id="cEmail" type="email" class="form-control" autocomplete="email" />
+                </div>
+                <div class="col-12">
+                  <label for="cBericht" class="form-label">Waar wil je over praten?</label>
+                  <textarea id="cBericht" class="form-control" rows="5" placeholder="Ik zit vast in..."></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn-main btn-submit">VERSTUUR</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-row">
+        <div>
+          <p class="footer-logo">CRAZY COACH</p>
+          <p class="footer-sub">Warmte. Humor. Uitdaging. En een beetje unicorn.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigatie">
+          <a href="#coaching">Coaching</a>
+          <a href="#resultaten">Resultaten</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <p class="footer-copy">&#169; 2026 Crazy Coach</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
