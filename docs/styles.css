@@ -246,7 +246,9 @@ body.theme-business .mode-business.active {
 .section-jou,
 .section-wat,
 .section-wie,
+.section-grenzen,
 .section-coaching,
+.section-over,
 .section-resultaten,
 .section-unicorn,
 .section-faq,
@@ -258,6 +260,11 @@ body.theme-business .mode-business.active {
 .section-jou,
 .section-faq {
   background: var(--bg-soft);
+}
+
+.section-grenzen,
+.section-over {
+  background: linear-gradient(180deg, var(--bg-soft), transparent);
 }
 
 .section-eyebrow {
@@ -709,6 +716,24 @@ body.theme-crazy .wie-card:hover {
   font-size: 0.95rem;
 }
 
+.offer-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.offer-points li {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.offer-points strong {
+  color: var(--text);
+}
+
 .offer-cta {
   font-family: var(--head-font);
   font-size: clamp(1.1rem, 1.6vw, 1.4rem);
@@ -818,6 +843,72 @@ body.theme-crazy .testi:hover {
   border-color: var(--purple);
 }
 
+/* --- HOE CRAZY IS CRAZY? ----------------------------------- */
+.grenzen-card,
+.grenzen-list {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  padding: 2rem;
+  height: 100%;
+}
+
+.grenzen-card p {
+  color: var(--muted);
+  margin-bottom: 0.9rem;
+}
+
+.grenzen-card p:last-child {
+  margin-bottom: 0;
+}
+
+.grenzen-list h3 {
+  font-family: var(--head-font);
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
+  margin-bottom: 0.7rem;
+  color: var(--yellow);
+}
+
+.grenzen-list ul {
+  margin: 0 0 1.3rem;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.grenzen-list li {
+  margin-bottom: 0.35rem;
+}
+
+/* --- OVER MIJ ---------------------------------------------- */
+.over-card {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  padding: 2rem;
+  height: 100%;
+}
+
+.over-card h3 {
+  font-family: var(--head-font);
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  color: var(--pink);
+  margin-bottom: 0.8rem;
+}
+
+.over-card p,
+.over-card li {
+  color: var(--muted);
+}
+
+.over-card ul {
+  margin: 0 0 1rem;
+  padding-left: 1.1rem;
+}
+
+.over-quote {
+  font-style: italic;
+  margin: 0;
+  color: var(--text) !important;
+}
+
 /* --- DE UNICORN -------------------------------------------- */
 .section-unicorn {
   background: var(--bg-soft);
@@ -899,6 +990,18 @@ body.theme-business .accordion-button::after {
   color: var(--muted);
   font-size: 0.9rem;
   margin-top: 0.5rem;
+}
+
+.contact-quick {
+  margin-top: 1rem;
+  border-left: 3px solid var(--pink);
+  padding-left: 0.8rem;
+}
+
+.contact-quick p {
+  margin: 0 0 0.25rem;
+  color: var(--muted);
+  font-size: 0.92rem;
 }
 
 .contact-form {
