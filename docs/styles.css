@@ -3,46 +3,44 @@
    Two modes: theme-crazy (default) and theme-business
    ============================================================ */
 
-/* --- CSS Variables ----------------------------------------- */
 :root {
-  /* Crazy defaults */
-  --bg: #07070d;
-  --bg-soft: #0f0f1c;
-  --surface: rgba(255, 255, 255, 0.04);
-  --border: rgba(255, 255, 255, 0.14);
-  --text: #f0eeff;
-  --muted: #9793bb;
+  --bg: #090a14;
+  --bg-soft: #121327;
+  --surface: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.16);
+  --text: #f7f7ff;
+  --muted: #b5b0db;
   --pink: #ff2d9b;
   --green: #39ff14;
   --yellow: #ffe600;
   --cyan: #00f5ff;
   --purple: #9b5cff;
-  --head-font: "Permanent Marker", cursive;
-  --body-font: "Archivo", sans-serif;
+  --head-font: "Satisfy", cursive;
+  --body-font: "Spectral", serif;
+  --ui-font: "Archivo", sans-serif;
   --btn-bg: var(--yellow);
-  --btn-color: #07070d;
+  --btn-color: #080913;
   --btn-border: var(--text);
 }
 
 body.theme-business {
-  --bg: #fafafa;
-  --bg-soft: #f0eeeb;
-  --surface: rgba(0, 0, 0, 0.025);
-  --border: rgba(0, 0, 0, 0.1);
-  --text: #111111;
-  --muted: #555555;
-  --pink: #9c27b0;
-  --green: #2e7d32;
-  --yellow: #e65100;
-  --cyan: #00838f;
-  --purple: #4527a0;
-  --head-font: "Archivo", sans-serif;
-  --btn-bg: #111111;
+  --bg: #f6f3ef;
+  --bg-soft: #ece5dc;
+  --surface: rgba(255, 255, 255, 0.75);
+  --border: rgba(36, 25, 13, 0.16);
+  --text: #20150d;
+  --muted: #5b4a3f;
+  --pink: #ad1457;
+  --green: #2f7d46;
+  --yellow: #b76e1f;
+  --cyan: #1b6f7b;
+  --purple: #6e3b70;
+  --head-font: "Cormorant Garamond", serif;
+  --btn-bg: #2a1a12;
   --btn-color: #ffffff;
-  --btn-border: #111111;
+  --btn-border: #2a1a12;
 }
 
-/* --- Reset -------------------------------------------------- */
 *,
 *::before,
 *::after {
@@ -50,22 +48,26 @@ body.theme-business {
   margin: 0;
   padding: 0;
 }
+
 html {
   scroll-behavior: smooth;
-}
-img {
-  max-width: 100%;
-  display: block;
 }
 
 body {
   font-family: var(--body-font);
+  font-size: 1rem;
   color: var(--text);
   background: var(--bg);
   line-height: 1.65;
+  overflow-x: hidden;
   transition:
     background 0.35s ease,
     color 0.35s ease;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 body.theme-crazy {
@@ -85,56 +87,181 @@ body.theme-crazy {
       rgba(57, 255, 20, 0.11) 0%,
       transparent 36%
     ),
-    #07070d;
+    #090a14;
 }
 
-/* --- Topbar ------------------------------------------------- */
+body.theme-business {
+  background:
+    radial-gradient(
+      circle at 12% 10%,
+      rgba(183, 110, 31, 0.11),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 88% 22%,
+      rgba(110, 59, 112, 0.1),
+      transparent 34%
+    ),
+    linear-gradient(180deg, #f8f4ee 0%, #f2ece4 100%);
+}
+
 .topbar {
   position: sticky;
   top: 0;
   z-index: 100;
-  padding: 0.85rem 0;
+  padding: 0.7rem 0;
   backdrop-filter: blur(14px);
-  border-bottom: 2px solid var(--border);
-  background: rgba(7, 7, 13, 0.52);
-  transition: background 0.35s ease;
+  border-bottom: 1px solid var(--border);
+  background: rgba(9, 10, 20, 0.68);
 }
 
 body.theme-business .topbar {
-  background: rgba(250, 250, 250, 0.9);
+  background: rgba(246, 243, 239, 0.92);
+}
+
+.topbar-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
 }
 
 .brand {
-  font-family: "Permanent Marker", cursive;
-  font-size: clamp(1.5rem, 2.2vw, 2.2rem);
-  letter-spacing: -0.06em;
-  color: var(--pink);
   text-decoration: none;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.brand-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+body.theme-business .brand-logo {
+  border-color: rgba(32, 21, 13, 0.2);
+}
+
+.brand-text {
+  font-family: var(--head-font);
+  font-size: clamp(1.85rem, 2.4vw, 2.5rem);
+  line-height: 1;
+  color: var(--pink);
+}
+
+body.theme-crazy .brand-text {
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);
+}
+
+.topbar-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: nowrap;
+}
+
+.mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.22rem;
   white-space: nowrap;
 }
 
-body.theme-crazy .brand {
-  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);
+.mode-option {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--ui-font);
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 0.38rem 0.92rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
-body.theme-business .brand {
-  text-shadow: none;
+
+.mode-option.active {
+  color: #fff;
+  background: linear-gradient(120deg, var(--pink), var(--purple));
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.28);
+}
+
+body.theme-business .mode-option.active {
+  background: linear-gradient(120deg, #8c4a2f, #5f3f67);
+}
+
+.nav-toggle {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.45rem;
+  min-height: 2.45rem;
+  padding: 0.42rem;
+  font-size: 1rem;
+  font-weight: 800;
+  font-family: var(--ui-font);
+}
+
+.hamburger-icon {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.22rem;
+}
+
+.hamburger-icon span {
+  display: block;
+  width: 15px;
+  height: 2px;
+  border-radius: 99px;
+  background: currentColor;
+}
+
+.nav-collapse {
+  grid-column: 1 / -1;
+  margin-top: 0.45rem;
+}
+
+.nav-collapse .nav-links {
+  border: 1px solid var(--border);
+  background: rgba(9, 10, 20, 0.92);
+  border-radius: 14px;
+  padding: 0.8rem 1rem;
+}
+
+body.theme-business .nav-collapse .nav-links {
+  background: rgba(246, 243, 239, 0.95);
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  gap: 1.15rem;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .nav-links a {
   color: var(--text);
   text-decoration: none;
-  font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-weight: 800;
+  font-family: var(--ui-font);
+  font-size: 1rem;
+  letter-spacing: 0.01em;
   position: relative;
   padding-bottom: 2px;
 }
@@ -153,47 +280,6 @@ body.theme-business .brand {
   transform: scaleX(1);
 }
 
-/* Mode toggle */
-.mode-toggle {
-  appearance: none;
-  background: transparent;
-  border: 2px solid var(--text);
-  color: var(--text);
-  font-family: var(--body-font);
-  font-weight: 900;
-  font-size: 0.74rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  padding: 0.45rem 0.9rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-}
-
-.mode-toggle:hover {
-  background: var(--pink);
-  border-color: var(--pink);
-  color: #fff;
-}
-
-body.theme-crazy .mode-crazy.active {
-  color: var(--yellow);
-}
-body.theme-business .mode-business.active {
-  color: var(--purple);
-}
-.mode-crazy:not(.active),
-.mode-business:not(.active) {
-  opacity: 0.45;
-}
-.sep {
-  opacity: 0.4;
-}
-
-/* --- Shared buttons ----------------------------------------- */
 .btn-main {
   display: inline-block;
   font-family: var(--head-font);
@@ -222,9 +308,8 @@ body.theme-business .mode-business.active {
   display: inline-block;
   font-family: var(--body-font);
   font-weight: 800;
-  font-size: 0.83rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
   padding: 0.75rem 1.5rem;
   background: transparent;
   color: var(--text);
@@ -240,7 +325,6 @@ body.theme-business .mode-business.active {
   color: var(--text);
 }
 
-/* --- Shared section spacing + eyebrow ----------------------- */
 .section-intro,
 .section-krachten,
 .section-jou,
@@ -269,9 +353,8 @@ body.theme-business .mode-business.active {
 
 .section-eyebrow {
   font-weight: 900;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  font-size: 1rem;
   color: var(--cyan);
   margin-bottom: 0.75rem;
 }
@@ -279,8 +362,8 @@ body.theme-business .mode-business.active {
 .section-title {
   font-family: var(--head-font);
   font-size: clamp(2rem, 5vw, 5rem);
-  line-height: 0.9;
-  letter-spacing: -0.04em;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
   max-width: 900px;
   margin-bottom: 0;
 }
@@ -302,7 +385,6 @@ body.theme-crazy .section-title {
   margin-bottom: 1rem;
 }
 
-/* --- HERO --------------------------------------------------- */
 .hero {
   padding: clamp(3rem, 9vh, 7rem) 0 clamp(2rem, 5vh, 4rem);
   overflow: hidden;
@@ -327,9 +409,9 @@ body.theme-crazy .eyebrow {
 
 .hero h1 {
   font-family: var(--head-font);
-  font-size: clamp(3.2rem, 7.5vw, 9rem);
-  line-height: 0.86;
-  letter-spacing: -0.04em;
+  font-size: clamp(3rem, 7vw, 8rem);
+  line-height: 0.88;
+  letter-spacing: -0.02em;
 }
 
 body.theme-crazy .hero h1 {
@@ -343,25 +425,19 @@ body.theme-crazy .hero h1 {
   max-width: 500px;
 }
 
-.hero-cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
+.hero-cta,
 .hero-routes {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 0.9rem;
 }
 
 .route-pill {
   padding: 0.35rem 0.9rem;
   border: 2px solid var(--border);
-  font-size: 0.77rem;
+  font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
   text-decoration: none;
   color: var(--muted);
   transition: all 0.2s ease;
@@ -388,43 +464,110 @@ body.theme-business .hero-img {
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
 }
 
-/* --- EVEN SERIEUS ------------------------------------------ */
-.prose-box {
+.prose-box,
+.kracht-card,
+.jou-item,
+.cocktail-card,
+.wie-card,
+.niet-card,
+.offer-card,
+.testi,
+.grenzen-card,
+.grenzen-list,
+.over-card,
+.unicorn-inner,
+.contact-form {
   background: var(--surface);
   border: 2px solid var(--border);
+}
+
+.prose-box,
+.kracht-card,
+.cocktail-card,
+.wie-card,
+.offer-card,
+.grenzen-card,
+.grenzen-list,
+.over-card,
+.contact-form {
   padding: 2rem;
+}
+
+.prose-box,
+.kracht-card,
+.wie-card,
+.offer-card,
+.testi,
+.grenzen-card,
+.grenzen-list,
+.over-card {
   height: 100%;
 }
 
-.prose-box--accent {
+.prose-box--accent,
+.offer-card--featured {
   background: linear-gradient(
     135deg,
-    rgba(255, 45, 155, 0.08),
-    rgba(155, 92, 255, 0.08)
+    rgba(255, 45, 155, 0.1),
+    rgba(155, 92, 255, 0.1)
   );
-  border-color: rgba(255, 45, 155, 0.3);
+}
+
+.prose-box h2,
+.kracht-card h3,
+.jou-title,
+.provoceer-box h3,
+.cocktail-card h3,
+.wie-card h4,
+.offer-card h3,
+.grenzen-list h3,
+.over-card h3,
+.unicorn-inner h2 {
+  font-family: var(--head-font);
 }
 
 .prose-box h2 {
-  font-family: var(--head-font);
   font-size: clamp(1.7rem, 3vw, 2.8rem);
   margin-bottom: 1.2rem;
 }
 
-body.theme-crazy .prose-box h2 {
+body.theme-crazy .prose-box h2,
+body.theme-crazy .provoceer-box h3,
+body.theme-crazy .jou-title,
+body.theme-crazy .unicorn-inner h2 {
   text-shadow: 3px 3px 0 var(--pink);
 }
 
-.prose-box p {
+.prose-box p,
+.kracht-card p,
+.provoceer-box p,
+.cocktail-item p,
+.wie-card p,
+.niet-card p,
+.offer-card > p,
+.offer-points li,
+.ba-cell p,
+.testi p,
+.grenzen-card p,
+.grenzen-list ul,
+.over-card p,
+.over-card li,
+.unicorn-inner p,
+.accordion-body,
+.contact-lead,
+.contact-promise,
+.contact-quick p,
+.footer-sub,
+.footer-copy {
   color: var(--muted);
-  font-size: 1rem;
-  margin-bottom: 0.9rem;
 }
-.prose-box p:last-child {
+
+.prose-box p:last-child,
+.niet-card p:last-child,
+.grenzen-card p:last-child,
+.provoceer-box p:last-child,
+.unicorn-inner p:last-child {
   margin-bottom: 0;
-}
-.prose-box strong {
-  color: var(--text);
 }
 
 .prose-box blockquote {
@@ -437,12 +580,7 @@ body.theme-crazy .prose-box h2 {
   background: rgba(255, 45, 155, 0.05);
 }
 
-/* --- SUPERKRACHTEN ----------------------------------------- */
 .kracht-card {
-  background: var(--surface);
-  border: 2px solid var(--border);
-  padding: 2rem;
-  height: 100%;
   text-align: center;
   transition:
     transform 0.2s ease,
@@ -459,7 +597,6 @@ body.theme-crazy .kracht-card:hover {
 }
 
 .kracht-card h3 {
-  font-family: var(--head-font);
   font-size: clamp(1.6rem, 2.5vw, 2.2rem);
   margin-bottom: 0.7rem;
 }
@@ -474,36 +611,14 @@ body.theme-crazy .kracht-card:hover {
   color: var(--green);
 }
 
-body.theme-crazy .kracht-card--warmte:hover {
-  border-color: var(--pink);
-}
-body.theme-crazy .kracht-card--humor:hover {
-  border-color: var(--yellow);
-}
-body.theme-crazy .kracht-card--uitdaging:hover {
-  border-color: var(--green);
-}
-
-.kracht-card p {
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-/* --- IS DIT JOU? ------------------------------------------- */
 .section-jou {
   text-align: center;
 }
 
 .jou-title {
-  font-family: var(--head-font);
   font-size: clamp(2.2rem, 5vw, 5.5rem);
-  line-height: 0.9;
-  letter-spacing: -0.04em;
-}
-
-body.theme-crazy .jou-title {
-  text-shadow: 4px 4px 0 var(--pink);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
 }
 
 .jou-grid {
@@ -515,8 +630,6 @@ body.theme-crazy .jou-title {
 }
 
 .jou-item {
-  background: var(--surface);
-  border: 2px solid var(--border);
   padding: 1.6rem;
   transition: border-color 0.2s ease;
 }
@@ -527,7 +640,6 @@ body.theme-crazy .jou-title {
 
 .jou-statement {
   font-style: italic;
-  color: var(--muted);
   margin-bottom: 0.7rem;
 }
 
@@ -539,7 +651,6 @@ body.theme-crazy .jou-title {
   margin: 0;
 }
 
-/* --- WAT IS PROVOCATIEF COACHEN? --------------------------- */
 .provoceer-box {
   background: linear-gradient(
     135deg,
@@ -552,35 +663,17 @@ body.theme-crazy .jou-title {
 }
 
 .provoceer-box h3 {
-  font-family: var(--head-font);
   font-size: clamp(1.4rem, 2.5vw, 2.3rem);
   margin-bottom: 1rem;
   line-height: 1;
 }
 
-body.theme-crazy .provoceer-box h3 {
-  text-shadow: 3px 3px 0 var(--pink);
-}
-
-.provoceer-box p {
-  color: var(--muted);
-  margin-bottom: 0.8rem;
-  font-size: 0.97rem;
-}
-.provoceer-box p:last-child {
-  margin-bottom: 0;
-}
-
 .cocktail-card {
-  background: var(--surface);
-  border: 2px solid var(--border);
-  padding: 2rem;
   position: sticky;
   top: 5rem;
 }
 
 .cocktail-card h3 {
-  font-family: var(--head-font);
   font-size: clamp(1.4rem, 2vw, 1.9rem);
   color: var(--yellow);
   margin-bottom: 1.5rem;
@@ -600,26 +693,14 @@ body.theme-crazy .provoceer-box h3 {
 
 .cocktail-item strong {
   display: block;
-  font-size: 0.76rem;
+  font-size: 1rem;
   font-weight: 900;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   margin-bottom: 0.4rem;
   color: var(--cyan);
 }
 
-.cocktail-item p {
-  color: var(--muted);
-  font-size: 0.93rem;
-  margin: 0;
-}
-
-/* --- VOOR WIE? --------------------------------------------- */
 .wie-card {
-  background: var(--surface);
-  border: 2px solid var(--border);
-  padding: 1.8rem;
-  height: 100%;
   transition: all 0.2s ease;
 }
 
@@ -629,44 +710,25 @@ body.theme-crazy .wie-card:hover {
 }
 
 .wie-card h4 {
-  font-family: var(--head-font);
   font-size: clamp(1.3rem, 2vw, 1.8rem);
   color: var(--yellow);
   margin-bottom: 0.8rem;
 }
 
-.wie-card p {
-  color: var(--muted);
-  font-size: 0.93rem;
-}
-
 .niet-card {
-  background: var(--surface);
-  border: 2px solid var(--border);
   padding: 1.8rem;
   max-width: 700px;
 }
 
 .niet-label {
-  font-size: 0.72rem;
+  font-size: 1rem;
   font-weight: 900;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--pink);
   margin-bottom: 0.6rem;
 }
 
-.niet-card p:last-child {
-  color: var(--muted);
-  margin: 0;
-}
-
-/* --- COACHING AANBOD --------------------------------------- */
 .offer-card {
-  background: var(--surface);
-  border: 2px solid var(--border);
-  padding: 2rem;
-  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
@@ -674,21 +736,11 @@ body.theme-crazy .wie-card:hover {
   transition: all 0.2s ease;
 }
 
-.offer-card--featured {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 45, 155, 0.1),
-    rgba(155, 92, 255, 0.1)
-  );
-  border-color: var(--pink);
-}
-
 .offer-badge {
   display: inline-block;
-  font-size: 0.68rem;
+  font-size: 1rem;
   font-weight: 900;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
   background: var(--pink);
   color: #fff;
   padding: 2px 10px;
@@ -696,41 +748,33 @@ body.theme-crazy .wie-card:hover {
 }
 
 .offer-card h3 {
-  font-family: var(--head-font);
   font-size: clamp(1.5rem, 2.5vw, 2.3rem);
   line-height: 0.95;
   color: var(--text);
 }
 
 .offer-meta {
-  font-size: 0.74rem;
+  font-size: 1rem;
   font-weight: 900;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.03em;
   color: var(--cyan);
 }
 
 .offer-card > p {
-  color: var(--muted);
   flex: 1;
   font-size: 0.95rem;
 }
 
 .offer-points {
   list-style: none;
-  padding: 0;
-  margin: 0;
   display: grid;
   gap: 0.45rem;
 }
 
-.offer-points li {
-  color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-.offer-points strong {
+.offer-points strong,
+.prose-box strong,
+.testi footer,
+.form-label {
   color: var(--text);
 }
 
@@ -751,12 +795,12 @@ body.theme-business .offer-cta {
   color: var(--purple);
   border-color: var(--purple);
 }
+
 .offer-cta:hover {
   color: var(--text);
   border-color: var(--text);
 }
 
-/* --- RESULTATEN -------------------------------------------- */
 .ba-table {
   display: flex;
   flex-direction: column;
@@ -767,28 +811,17 @@ body.theme-business .offer-cta {
   display: grid;
   grid-template-columns: 1fr 2.5rem 1fr;
   align-items: stretch;
-  gap: 0;
 }
 
 .ba-cell {
-  background: var(--surface);
-  border: 2px solid var(--border);
   padding: 1.4rem 1.6rem;
-}
-
-.ba-cell p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.97rem;
-  line-height: 1.6;
 }
 
 .ba-tag {
   display: block;
-  font-size: 0.68rem;
+  font-size: 1rem;
   font-weight: 900;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
   margin-bottom: 0.5rem;
 }
 
@@ -816,10 +849,7 @@ body.theme-business .offer-cta {
 }
 
 .testi {
-  background: var(--surface);
-  border: 2px solid var(--border);
   padding: 1.8rem;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -828,79 +858,35 @@ body.theme-business .offer-cta {
 .testi p {
   font-style: italic;
   font-size: 1rem;
-  color: var(--muted);
   line-height: 1.7;
   margin-bottom: 1.2rem;
 }
 
 .testi footer {
   font-weight: 700;
-  font-size: 0.85rem;
-  color: var(--text);
-}
-
-body.theme-crazy .testi:hover {
-  border-color: var(--purple);
-}
-
-/* --- HOE CRAZY IS CRAZY? ----------------------------------- */
-.grenzen-card,
-.grenzen-list {
-  background: var(--surface);
-  border: 2px solid var(--border);
-  padding: 2rem;
-  height: 100%;
-}
-
-.grenzen-card p {
-  color: var(--muted);
-  margin-bottom: 0.9rem;
-}
-
-.grenzen-card p:last-child {
-  margin-bottom: 0;
+  font-size: 0.95rem;
 }
 
 .grenzen-list h3 {
-  font-family: var(--head-font);
   font-size: clamp(1.2rem, 2vw, 1.7rem);
   margin-bottom: 0.7rem;
   color: var(--yellow);
 }
 
-.grenzen-list ul {
+.grenzen-list ul,
+.over-card ul {
   margin: 0 0 1.3rem;
   padding-left: 1.1rem;
-  color: var(--muted);
 }
 
 .grenzen-list li {
   margin-bottom: 0.35rem;
 }
 
-/* --- OVER MIJ ---------------------------------------------- */
-.over-card {
-  background: var(--surface);
-  border: 2px solid var(--border);
-  padding: 2rem;
-  height: 100%;
-}
-
 .over-card h3 {
-  font-family: var(--head-font);
   font-size: clamp(1.25rem, 2vw, 1.7rem);
   color: var(--pink);
   margin-bottom: 0.8rem;
-}
-
-.over-card p,
-.over-card li {
-  color: var(--muted);
-}
-
-.over-card ul {
-  margin: 0 0 1rem;
-  padding-left: 1.1rem;
 }
 
 .over-quote {
@@ -909,36 +895,21 @@ body.theme-crazy .testi:hover {
   color: var(--text) !important;
 }
 
-/* --- DE UNICORN -------------------------------------------- */
 .section-unicorn {
   background: var(--bg-soft);
 }
 
 .unicorn-inner {
-  border: 2px solid var(--border);
   padding: 3rem;
-  background: var(--surface);
 }
 
 .unicorn-inner h2 {
-  font-family: var(--head-font);
   font-size: clamp(2rem, 4.5vw, 4.8rem);
-  line-height: 0.9;
-  letter-spacing: -0.04em;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
 }
 
-body.theme-crazy .unicorn-inner h2 {
-  text-shadow: 5px 5px 0 var(--pink);
-}
-
-.unicorn-inner p {
-  color: var(--muted);
-  line-height: 1.75;
-  margin-bottom: 0.8rem;
-}
-
-/* --- FAQ --------------------------------------------------- */
 .faq-acc {
   max-width: 920px;
 }
@@ -968,27 +939,21 @@ body.theme-crazy .unicorn-inner h2 {
 body.theme-crazy .accordion-button::after {
   filter: invert(1);
 }
-body.theme-business .accordion-button::after {
-  filter: none;
-}
 
 .accordion-body {
-  color: var(--muted);
   line-height: 1.75;
   padding: 0 1.5rem 1.4rem;
 }
 
-/* --- CONTACT ----------------------------------------------- */
 .contact-lead {
   font-size: 1.05rem;
-  color: var(--muted);
   line-height: 1.75;
   margin-top: 1.2rem;
 }
+
 .contact-promise {
   font-style: italic;
-  color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   margin-top: 0.5rem;
 }
 
@@ -998,24 +963,14 @@ body.theme-business .accordion-button::after {
   padding-left: 0.8rem;
 }
 
-.contact-quick p {
-  margin: 0 0 0.25rem;
-  color: var(--muted);
-  font-size: 0.92rem;
-}
-
 .contact-form {
-  background: var(--surface);
-  border: 2px solid var(--border);
   padding: 2rem;
 }
 
 .form-label {
   font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text);
+  font-size: 1rem;
+  letter-spacing: 0.01em;
   margin-bottom: 0.4rem;
 }
 
@@ -1053,7 +1008,6 @@ body.theme-business .form-control:focus {
   font-size: 1.3rem;
 }
 
-/* --- FOOTER ------------------------------------------------ */
 .site-footer {
   border-top: 2px solid var(--border);
   padding: 2.5rem 0;
@@ -1070,20 +1024,19 @@ body.theme-business .form-control:focus {
 }
 
 .footer-logo {
-  font-family: "Permanent Marker", cursive;
+  font-family: var(--head-font);
   font-size: clamp(1.6rem, 2.5vw, 2.2rem);
   color: var(--pink);
-  letter-spacing: -0.06em;
+  letter-spacing: -0.02em;
   margin-bottom: 0.3rem;
 }
 
 .footer-sub {
-  color: var(--muted);
-  font-size: 0.88rem;
+  font-size: 1rem;
 }
+
 .footer-copy {
-  color: var(--muted);
-  font-size: 0.78rem;
+  font-size: 1rem;
 }
 
 .footer-nav {
@@ -1096,48 +1049,137 @@ body.theme-business .form-control:focus {
   color: var(--text);
   text-decoration: none;
   font-weight: 700;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
 }
 
 .footer-nav a:hover {
   color: var(--pink);
 }
 
-/* --- Responsive -------------------------------------------- */
+@media (max-width: 1199px) {
+  .topbar-actions {
+    justify-content: flex-end;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+  }
+}
+
 @media (max-width: 992px) {
   .ba-row {
     grid-template-columns: 1fr;
   }
+
   .ba-arrow {
     display: none;
   }
+
   .ba-after {
     border-left: 2px solid var(--border);
   }
+
   .cocktail-card {
     position: static;
   }
 }
 
 @media (max-width: 768px) {
-  .hero {
-    padding: 2rem 0;
+  .container {
+    max-width: 100% !important;
+    padding-left: 0.9rem !important;
+    padding-right: 0.9rem !important;
   }
+
+  .hero {
+    padding: 1.5rem 0;
+  }
+
+  .section-intro,
+  .section-krachten,
+  .section-jou,
+  .section-wat,
+  .section-wie,
+  .section-grenzen,
+  .section-coaching,
+  .section-over,
+  .section-resultaten,
+  .section-unicorn,
+  .section-faq,
+  .section-contact {
+    padding: 2.25rem 0;
+  }
+
+  .brand-logo {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand-text {
+    font-size: 2rem;
+  }
+
+  .topbar {
+    padding: 0.55rem 0;
+  }
+
+  .topbar-inner {
+    gap: 0.55rem;
+  }
+
+  .brand {
+    gap: 0.45rem;
+    min-width: 0;
+  }
+
+  .brand-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 45vw;
+  }
+
+  .mode-option {
+    font-size: 1rem;
+    padding: 0.32rem 0.58rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+  }
+
   .hero-cta {
     flex-direction: column;
   }
+
   .btn-main,
   .btn-ghost {
     width: 100%;
     text-align: center;
     justify-content: center;
   }
+
+  .unicorn-inner,
+  .prose-box,
+  .kracht-card,
+  .cocktail-card,
+  .wie-card,
+  .offer-card,
+  .grenzen-card,
+  .grenzen-list,
+  .over-card,
+  .contact-form {
+    padding: 1.35rem;
+  }
+
   .footer-row {
     flex-direction: column;
     text-align: center;
   }
+
   .footer-nav {
     justify-content: center;
   }
