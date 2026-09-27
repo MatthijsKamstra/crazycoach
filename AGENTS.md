@@ -1,5 +1,3 @@
-# AGENTS.md
-
 # CrazyCoach Reproduction Agent
 
 Purpose: reproduce the CrazyCoach website consistently with another model.
@@ -228,7 +226,7 @@ Optional quick diagnostics in editor:
 
 Use this when asking another model to reproduce or extend the site:
 
-"Implement or improve the CrazyCoach site in docs/ using CRAZYCOACH.agent.md as the contract.
+"Implement or improve the CrazyCoach site in docs/ using AGENTS.md as the contract.
 Keep static HTML/CSS/JS with Bootstrap CDN.
 Preserve dual-mode architecture (data-crazy/data-business + localStorage persistence).
 Do not change information architecture.
