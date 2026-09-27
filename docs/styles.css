@@ -70,6 +70,34 @@ body {
     color 0.35s ease;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--head-font);
+}
+
+body.theme-crazy h1,
+body.theme-crazy h2,
+body.theme-crazy h3,
+body.theme-crazy h4,
+body.theme-crazy h5,
+body.theme-crazy h6 {
+  transform: rotate(-2deg) skew(-5deg);
+  transform-origin: left center;
+}
+
+body.theme-crazy .section-faq h1,
+body.theme-crazy .section-faq h2,
+body.theme-crazy .section-faq h3,
+body.theme-crazy .section-faq h4,
+body.theme-crazy .section-faq h5,
+body.theme-crazy .section-faq h6 {
+  transform: none;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -335,6 +363,39 @@ body.theme-business .nav-collapse .nav-links {
   text-decoration: none;
 }
 
+body.theme-crazy .btn-main {
+  background: linear-gradient(180deg, #fff07b 0%, #ffe600 62%, #e3ca00 100%);
+  border-color: #6f6100;
+  border-radius: 14px;
+  transform: translateY(0);
+  box-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.28) inset,
+    0 -2px 0 rgba(0, 0, 0, 0.16) inset,
+    0 6px 0 #8f7e00,
+    0 10px 18px rgba(0, 0, 0, 0.24);
+  transition:
+    transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+body.theme-crazy .btn-main:hover {
+  transform: translateY(0.22rem);
+  box-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.28) inset,
+    0 -2px 0 rgba(0, 0, 0, 0.16) inset,
+    0 4px 0 #8f7e00,
+    0 7px 14px rgba(0, 0, 0, 0.22);
+}
+
+body.theme-crazy .btn-main:active {
+  transform: translateY(0.58rem);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.22) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.12) inset,
+    0 0 0 #8f7e00,
+    0 3px 8px rgba(0, 0, 0, 0.16);
+}
+
 .btn-ghost {
   display: inline-block;
   font-family: var(--body-font);
@@ -354,6 +415,27 @@ body.theme-business .nav-collapse .nav-links {
 .btn-ghost:hover {
   border-color: var(--text);
   color: var(--text);
+}
+
+body.theme-crazy .btn-ghost {
+  border-radius: 14px;
+  box-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.08) inset,
+    6px 6px 0 rgba(0, 0, 0, 0.28);
+}
+
+body.theme-crazy .btn-ghost:hover {
+  transform: translate(1px, 1px);
+  box-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.08) inset,
+    4px 4px 0 rgba(0, 0, 0, 0.28);
+}
+
+body.theme-crazy .btn-ghost:active {
+  transform: translate(2px, 2px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    2px 2px 0 rgba(0, 0, 0, 0.22);
 }
 
 .section-intro,
@@ -447,8 +529,6 @@ body.theme-crazy .eyebrow {
 
 body.theme-crazy .hero h1 {
   text-shadow: 6px 6px 0 var(--pink);
-  rotate: -2deg;
-  transform: skew(-5deg);
 }
 
 .hero-lead {
@@ -476,9 +556,32 @@ body.theme-crazy .hero h1 {
   transition: all 0.2s ease;
 }
 
+body.theme-crazy .route-pill {
+  background: rgba(9, 10, 20, 0.9);
+  border-color: rgba(255, 45, 155, 0.5);
+  border-radius: 999px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    4px 4px 0 rgba(0, 0, 0, 0.28);
+}
+
 .route-pill:hover {
   border-color: var(--pink);
   color: var(--pink);
+}
+
+body.theme-crazy .route-pill:hover {
+  transform: translate(1px, 1px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    3px 3px 0 rgba(0, 0, 0, 0.26);
+}
+
+body.theme-crazy .route-pill:active {
+  transform: translate(2px, 2px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 .hero-img-wrap {
@@ -821,7 +924,20 @@ body.theme-crazy .wie-card:hover {
   width: fit-content;
   transition:
     color 0.2s ease,
-    border-color 0.2s ease;
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+body.theme-crazy .offer-cta {
+  display: inline-block;
+  padding: 0.35rem 0.7rem;
+  border: 2px solid var(--yellow);
+  border-radius: 12px;
+  background: rgba(255, 230, 0, 0.08);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.16) inset,
+    4px 4px 0 rgba(0, 0, 0, 0.28);
 }
 
 body.theme-business .offer-cta {
@@ -832,6 +948,20 @@ body.theme-business .offer-cta {
 .offer-cta:hover {
   color: var(--text);
   border-color: var(--text);
+}
+
+body.theme-crazy .offer-cta:hover {
+  transform: translate(1px, 1px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.16) inset,
+    3px 3px 0 rgba(0, 0, 0, 0.26);
+}
+
+body.theme-crazy .offer-cta:active {
+  transform: translate(2px, 2px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.12) inset,
+    2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 .ba-table {
