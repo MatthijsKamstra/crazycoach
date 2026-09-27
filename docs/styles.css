@@ -178,17 +178,41 @@ body.theme-crazy .brand-text {
 }
 
 .mode-toggle {
+  position: relative;
   display: flex;
+  width: fit-content;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 0.22rem;
   white-space: nowrap;
+  overflow: hidden;
+}
+
+.mode-toggle::before {
+  content: "";
+  position: absolute;
+  top: 0.22rem;
+  left: 0.22rem;
+  width: calc(50% - 0.22rem);
+  height: calc(100% - 0.44rem);
+  border-radius: 999px;
+  background: linear-gradient(120deg, var(--pink), var(--purple));
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.28);
+  transition: transform 0.28s cubic-bezier(0.32, 1.35, 0.4, 1);
+}
+
+body.theme-business .mode-toggle::before {
+  transform: translateX(100%);
+  background: linear-gradient(120deg, #8c4a2f, #5f3f67);
 }
 
 .mode-option {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 8.6ch;
   appearance: none;
   border: 0;
   border-radius: 999px;
@@ -197,19 +221,14 @@ body.theme-crazy .brand-text {
   font-family: var(--ui-font);
   font-weight: 800;
   font-size: 1rem;
-  padding: 0.38rem 0.92rem;
+  text-align: center;
+  padding: 0.38rem 0.7rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .mode-option.active {
   color: #fff;
-  background: linear-gradient(120deg, var(--pink), var(--purple));
-  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.28);
-}
-
-body.theme-business .mode-option.active {
-  background: linear-gradient(120deg, #8c4a2f, #5f3f67);
 }
 
 .nav-toggle {
@@ -428,6 +447,8 @@ body.theme-crazy .eyebrow {
 
 body.theme-crazy .hero h1 {
   text-shadow: 6px 6px 0 var(--pink);
+  rotate: -2deg;
+  transform: skew(-5deg);
 }
 
 .hero-lead {
@@ -1061,6 +1082,22 @@ body.theme-business .form-control:focus {
   color: var(--pink);
   letter-spacing: -0.02em;
   margin-bottom: 0.3rem;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.footer-logo-icon {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  background: #ffffff;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  padding: 3px;
 }
 
 .footer-sub {
