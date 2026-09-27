@@ -51,6 +51,11 @@ body.theme-business {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+section[id] {
+  scroll-margin-top: 4rem;
 }
 
 body {
@@ -138,11 +143,18 @@ body.theme-business .topbar {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 4px;
   border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
+body.theme-crazy .brand-logo {
+  background: #ffffff;
+}
+
 body.theme-business .brand-logo {
+  background: #f8f4ee;
   border-color: rgba(32, 21, 13, 0.2);
 }
 
@@ -575,7 +587,7 @@ body.theme-crazy .unicorn-inner h2 {
   padding: 0.6rem 1rem;
   margin: 1rem 0;
   font-style: italic;
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--text);
   background: rgba(255, 45, 155, 0.05);
 }
@@ -762,7 +774,7 @@ body.theme-crazy .wie-card:hover {
 
 .offer-card > p {
   flex: 1;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .offer-points {
@@ -864,7 +876,7 @@ body.theme-business .offer-cta {
 
 .testi footer {
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .grenzen-list h3 {
@@ -893,6 +905,26 @@ body.theme-business .offer-cta {
   font-style: italic;
   margin: 0;
   color: var(--text) !important;
+}
+
+.coach-photo-block {
+  margin-bottom: 1rem;
+}
+
+.coach-photo {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border: 2px solid var(--border);
+  display: none;
+}
+
+body.theme-crazy .coach-photo--crazy {
+  display: block;
+}
+
+body.theme-business .coach-photo--business {
+  display: block;
 }
 
 .section-unicorn {
@@ -942,18 +974,18 @@ body.theme-crazy .accordion-button::after {
 
 .accordion-body {
   line-height: 1.75;
-  padding: 0 1.5rem 1.4rem;
+  padding: 0.75rem 1.5rem 1.4rem;
 }
 
 .contact-lead {
-  font-size: 1.05rem;
+  font-size: 1rem;
   line-height: 1.75;
   margin-top: 1.2rem;
 }
 
 .contact-promise {
   font-style: italic;
-  font-size: 0.95rem;
+  font-size: 1rem;
   margin-top: 0.5rem;
 }
 
@@ -1134,6 +1166,7 @@ body.theme-business .form-control:focus {
   }
 
   .topbar-inner {
+    grid-template-columns: 1fr;
     gap: 0.55rem;
   }
 
@@ -1147,6 +1180,15 @@ body.theme-business .form-control:focus {
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 45vw;
+  }
+
+  .topbar-actions {
+    justify-self: end;
+    width: max-content;
+  }
+
+  .nav-collapse {
+    margin-top: 0.3rem;
   }
 
   .mode-option {
