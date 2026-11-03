@@ -499,8 +499,41 @@ body.theme-crazy .section-title {
 }
 
 .hero {
+  position: relative;
+  isolation: isolate;
   padding: clamp(3rem, 9vh, 7rem) 0 clamp(2rem, 5vh, 4rem);
   overflow: hidden;
+  background-color: var(--bg);
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.hero::before {
+  background-position: right center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero::after {
+  background: linear-gradient(90deg, rgba(9, 10, 20, 0.98) 0%, rgba(9, 10, 20, 0.9) 34%, rgba(9, 10, 20, 0.28) 72%, rgba(9, 10, 20, 0.08) 100%);
+}
+
+body.theme-crazy .hero::before {
+  background-image: url("../public/images/hero-crazy.png");
+}
+
+body.theme-business .hero::before {
+  background-image: url("../public/images/hero-business.png");
+}
+
+body.theme-business .hero::after {
+  background: linear-gradient(90deg, rgba(246, 243, 239, 0.98) 0%, rgba(246, 243, 239, 0.92) 36%, rgba(246, 243, 239, 0.35) 72%, rgba(246, 243, 239, 0.08) 100%);
 }
 
 .hero-copy {
@@ -582,22 +615,6 @@ body.theme-crazy .route-pill:active {
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.06) inset,
     2px 2px 0 rgba(0, 0, 0, 0.2);
-}
-
-.hero-img-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-img {
-  width: min(100%, 620px);
-  height: auto;
-  filter: drop-shadow(0 0 50px rgba(255, 45, 155, 0.45));
-}
-
-body.theme-business .hero-img {
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
 }
 
 .prose-box,
@@ -1307,6 +1324,18 @@ body.theme-business .form-control:focus {
 
   .hero {
     padding: 1.5rem 0;
+  }
+
+  .hero::before {
+    background-position: right bottom;
+  }
+
+  body.theme-crazy .hero::after {
+    background: linear-gradient(180deg, rgba(9, 10, 20, 0.98) 0%, rgba(9, 10, 20, 0.95) 68%, rgba(9, 10, 20, 0.45) 100%);
+  }
+
+  body.theme-business .hero::after {
+    background: linear-gradient(180deg, rgba(246, 243, 239, 0.98) 0%, rgba(246, 243, 239, 0.95) 68%, rgba(246, 243, 239, 0.45) 100%);
   }
 
   .section-intro,

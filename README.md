@@ -1,6 +1,9 @@
 # CrazyCoach landing page
 
+![CrazyCoach landing page](screenshots/logo-new.jpeg)
+
 Single-page website for CrazyCoach with two visual modes:
+
 - Crazy mode (playful and expressive)
 - Business mode (cleaner and more premium)
 
@@ -44,6 +47,7 @@ Then open `http://localhost:8080`.
 - Click `Crazy` or `Business` in the top bar.
 - Selected mode is saved in `localStorage` under key `crazycoach-mode`.
 - Text content swaps using `data-crazy` and `data-business` attributes.
+- Hero backgrounds use `public/images/hero-crazy.png` and `public/images/hero-business.png`, with the unicorn composed on the right and open space on the left for copy. CSS anchors these images to the right without mirroring.
 
 ## Mobile behavior
 
