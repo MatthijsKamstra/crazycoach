@@ -521,19 +521,31 @@ body.theme-crazy .section-title {
 }
 
 .hero::after {
-  background: linear-gradient(90deg, rgba(9, 10, 20, 0.98) 0%, rgba(9, 10, 20, 0.9) 34%, rgba(9, 10, 20, 0.28) 72%, rgba(9, 10, 20, 0.08) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(9, 10, 20, 0.98) 0%,
+    rgba(9, 10, 20, 0.9) 34%,
+    rgba(9, 10, 20, 0.28) 72%,
+    rgba(9, 10, 20, 0.08) 100%
+  );
 }
 
 body.theme-crazy .hero::before {
-  background-image: url("../public/images/hero-crazy.png");
+  background-image: url("images/hero-crazy.png");
 }
 
 body.theme-business .hero::before {
-  background-image: url("../public/images/hero-business.png");
+  background-image: url("images/hero-business.png");
 }
 
 body.theme-business .hero::after {
-  background: linear-gradient(90deg, rgba(246, 243, 239, 0.98) 0%, rgba(246, 243, 239, 0.92) 36%, rgba(246, 243, 239, 0.35) 72%, rgba(246, 243, 239, 0.08) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(246, 243, 239, 0.98) 0%,
+    rgba(246, 243, 239, 0.92) 36%,
+    rgba(246, 243, 239, 0.35) 72%,
+    rgba(246, 243, 239, 0.08) 100%
+  );
 }
 
 .hero-copy {
@@ -1331,11 +1343,21 @@ body.theme-business .form-control:focus {
   }
 
   body.theme-crazy .hero::after {
-    background: linear-gradient(180deg, rgba(9, 10, 20, 0.98) 0%, rgba(9, 10, 20, 0.95) 68%, rgba(9, 10, 20, 0.45) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(9, 10, 20, 0.98) 0%,
+      rgba(9, 10, 20, 0.95) 68%,
+      rgba(9, 10, 20, 0.45) 100%
+    );
   }
 
   body.theme-business .hero::after {
-    background: linear-gradient(180deg, rgba(246, 243, 239, 0.98) 0%, rgba(246, 243, 239, 0.95) 68%, rgba(246, 243, 239, 0.45) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(246, 243, 239, 0.98) 0%,
+      rgba(246, 243, 239, 0.95) 68%,
+      rgba(246, 243, 239, 0.45) 100%
+    );
   }
 
   .section-intro,
