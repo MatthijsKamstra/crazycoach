@@ -1281,6 +1281,62 @@ body.theme-business .form-control:focus {
   color: var(--pink);
 }
 
+.footer-copy .legal-trigger {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.footer-copy .legal-trigger:hover {
+  color: var(--pink);
+}
+
+.legal-modal .modal-content {
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+
+.legal-modal .modal-header {
+  border-color: var(--border);
+}
+
+.legal-modal .modal-title {
+  font-family: var(--head-font);
+  font-size: 1.75rem;
+  transform: none;
+}
+
+.legal-modal .modal-body {
+  font-family: var(--body-font);
+}
+
+.legal-modal .modal-body h3 {
+  margin: 1.25rem 0 0.4rem;
+  color: var(--pink);
+  font-family: var(--ui-font);
+  font-size: 1rem;
+  font-weight: 800;
+  transform: none;
+}
+
+.legal-modal .modal-body p,
+.legal-modal .modal-body li {
+  color: var(--muted);
+}
+
+.legal-modal .legal-version {
+  font-family: var(--ui-font);
+  font-size: 0.9rem;
+}
+
+body.theme-crazy .legal-modal .btn-close {
+  filter: invert(1);
+}
+
 .footer-nav {
   display: flex;
   flex-wrap: wrap;
