@@ -531,11 +531,11 @@ body.theme-crazy .section-title {
 }
 
 body.theme-crazy .hero::before {
-  background-image: url("images/hero-crazy.png");
+  background-image: url("images/hero/hero-crazy.png");
 }
 
 body.theme-business .hero::before {
-  background-image: url("images/hero-business.png");
+  background-image: url("images/hero/hero-business.png");
 }
 
 body.theme-business .hero::after {
